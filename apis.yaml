@@ -9,7 +9,7 @@ servers:
     description: Local development server
 
 paths:
-  /api/login:
+  /api/users/login:
     post:
       summary: Authenticate account credentials and return user details with JWT token
       description: Accounts must be verified before authenticating.
@@ -33,12 +33,6 @@ paths:
       responses:
         "200":
           description: Account details, a JWT access token and a refresh token cookie
-          headers:
-            Set-Cookie:
-              description: "`refreshToken`"
-              schema:
-                type: string
-                example: refreshToken=51872eca5efedcf424db4cf5afd16a9d00ad25b743a034c9c221afc85d18dcd5e4ad6e3f08607550; Path=/; Expires=Tue, 16 Jun 2020 09:14:17 GMT; HttpOnly
           content:
             application/json:
               schema:
@@ -67,7 +61,7 @@ paths:
                     type: string
                     example: "Invalid credentials"
 
-  /api/me:
+  /api/users/me:
     get:
       summary: Get details of user
       description: Details of current logged in user
@@ -99,7 +93,7 @@ paths:
                     example: "version number"
         "401":
           $ref: "#/components/responses/UnauthorizedError"
-  /api:
+  /api/users:
     post:
       summary: Register a new user account
       description: Register a new user Required fields are- name,email,password
