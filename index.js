@@ -4,7 +4,7 @@ const { errorHandler } = require("./middleware/errorMiddleware");
 const connectDB = require("./config/db");
 const swaggerUi = require("swagger-ui-express");
 const YAML = require("yamljs");
-const swaggerJSDoc = YAML.load("./api.yaml");
+const swaggerJSDoc = YAML.load("./apis.yaml");
 
 const port = process.env.PORT || 5000;
 
