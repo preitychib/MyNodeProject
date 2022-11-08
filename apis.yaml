@@ -217,7 +217,7 @@ paths:
                     example: "Please add the required fields"
         "401":
           $ref: "#/components/responses/UnauthorizedError"
-  /api/taks/{id}:
+  /api/tasks/{id}:
     parameters:
       - in: path
         name: id
